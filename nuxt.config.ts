@@ -1,13 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   pages: true,
   modules: [
-    'nuxt-icons',
+    "nuxt-icon",
     'nuxt-lodash',
     // '@pinia/nuxt',
     // '@pinia-plugin-persistedstate/nuxt',
-    '@nuxtjs/tailwindcss'
     // '@nuxtjs/supabase'
   ],
   runtimeConfig: {
@@ -22,7 +28,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  
-   
+
+
 
 })
