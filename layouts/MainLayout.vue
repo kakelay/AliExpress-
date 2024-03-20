@@ -69,6 +69,25 @@
                     <img width="170" src="/AliExpress-logo.png">
 
                 </NuxtLink>
+                <div class="max-w-[700px] w-full md:block hidden">
+                    <div class="relative">
+                        <dev class="flex items-center border-2 border-[#FF4646] rounded-md w-full">
+                            <input class="
+                                w-full
+                                placeholder-gray-400
+                                text-sm
+                                pl-3
+                                focus:outline-none
+                            " placeholder="kitchen accessories" type="text" v-model="searchItem">
+                            <Icon v-if="isSearching" name="eos-icons:loading" size="25" class="mr-2" />
+                            <button class="flex items-center h-[100%] p-1.5 px-2 bg-[#FF4646]">
+                                <Icon name="ph:magnifying-glass" size="20" color="#ffffff" />
+                            </button>
+
+
+                        </dev>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -76,4 +95,6 @@
 
 <script setup>
 let isAccountMenu = ref(false)
+let isSearching = ref(true)
+let searchItem = ref('')
 </script>
