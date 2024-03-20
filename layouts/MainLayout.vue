@@ -49,18 +49,12 @@
                                 </NuxtLink>
                             </div>
                         </div>
-                        <div class="border-b"/>
+                        <div class="border-b" />
                         <ul class="bg-white">
-                            <li
-                            @click="navigateTo('/orders')"
-                            class="text-[13px] py-2 px-4 w-full hover:bg-gray-200"
-                            >
+                            <li @click="navigateTo('/orders')" class="text-[13px] py-2 px-4 w-full hover:bg-gray-200">
                                 My Orders
                             </li>
-                            <li
-                                v-if="true"
-                                class="text-[13px] py-2 px-4 w-full hover:bg-gray-200"
-                            >
+                            <li v-if="true" class="text-[13px] py-2 px-4 w-full hover:bg-gray-200">
                                 Sign Out
                             </li>
                         </ul>
@@ -69,12 +63,12 @@
 
             </ul>
         </div>
-        <div
-            id="MainHeader"
-            class="flex items-center w-full bg-white"
-        >
-            <div class="flex lg:justify-start justify-between gap-10 max-w-[1150px] w-full px-3">
+        <div id="MainHeader" class="flex items-center w-full bg-white">
+            <div class="flex lg:justify-start justify-between gap-10 max-w-[1150px] w-full px-3 py-5 mx-auto">
+                <NuxtLink to="/" class="min-w-[170px]">
+                    <img width="170" src="/AliExpress-logo.png">
 
+                </NuxtLink>
             </div>
         </div>
     </div>
