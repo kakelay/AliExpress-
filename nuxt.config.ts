@@ -12,8 +12,8 @@ export default defineNuxtConfig({
   modules: [
     "nuxt-icon",
     'nuxt-lodash',
-    // '@pinia/nuxt',
-    // '@pinia-plugin-persistedstate/nuxt',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
     // '@nuxtjs/supabase'
   ],
   runtimeConfig: {
