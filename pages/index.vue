@@ -3,10 +3,10 @@
     <div d="IndexPage" class="mt-4 max-w-[1200px] mx-auto px-2">
       <div
         class="grid max-xl:grid-flow-cols-6 lg:grid-flow-cols-5 md:grid-flow-cols-4 sm:grid-cols-3 grid-flow-cols-2 gap-4">
-          <div v-if="products" v-for="product in products" :key="product">
-            
-            <ProductComponent :product="product"/>
-          </div>
+        <div v-if="products" v-for="product in products" :key="product">
+          {{ product }}
+          <ProductComponent :product="product" />
+        </div>
       </div>
     </div>
   </MainLayout>
@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
- 
+
 import MainLayout from '~/layouts/MainLayout.vue';
 const products = [
   { id: 1, title: "Title 1", description: "This is a drcription ", url: "https://picsum.photos/id/7/800/800", price: 9999 },
