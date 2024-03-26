@@ -4,7 +4,7 @@
       <div
         class="grid max-xl:grid-flow-cols-6 lg:grid-flow-cols-5 md:grid-flow-cols-4 sm:grid-cols-3 grid-flow-cols-2 gap-4">
         <div v-if="products" v-for="product in products" :key="product">
-          {{ product }}
+          <!-- {{ product }} -->
           <ProductComponent :product="product" />
         </div>
       </div>
