@@ -27,6 +27,7 @@ const products = [
   { id: 8, title: "Title 8", description: "This is a drcription ", url: "https://picsum.photos/id/77/800/800", price: 8008 },
   { id: 9, title: "Title 9", description: "This is a drcription ", url: "https://picsum.photos/id/78/800/800", price: 44465 },
   { id: 10, title: "Title 10", description: "This is a drcription ", url: "https://picsum.photos/id/79/800/800", price: 9999 },
+  { id: 11, title: "Title 10", description: "This is a drcription ", url: "https://avatars.githubusercontent.com/u/110383694?v=4", price: 9999 },
 
 
 
