@@ -1,3 +1,7 @@
 {
-  "recommendations": ["vue.vscode-typescript-vue-plugin", "vue.volar"]
+  "recommendations": [
+    "vue.vscode-typescript-vue-plugin",
+    "vue.volar",
+    "octref.vetur"
+  ]
 }
