@@ -37,7 +37,19 @@
         </button>
       </div>
       <div class="text-xl font-semibold">
-      $<span class="font-bold">{{product.price / 100 }}</span>
+        $<span class="font-bold">{{ product.price / 100 }}</span>
+      </div>
+      <p class="text-[#009A66] text-xs font-semibold pt-1">
+        Free 11-days delivery over €8.28
+      </p>
+      <p class="text-[#009A66] text-xs font-semibold pt-1">Free Shipping</p>
+      <div class="flex items-center justify-end">
+        <button
+          @click="removeFromCart()"
+          class="sm:hidden block -mt-0.5 hover:text-red-500"
+        >
+          <Icon name="material-symbols:delete-outline" size="20" />
+        </button>
       </div>
     </div>
   </div>
