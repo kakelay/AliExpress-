@@ -42,8 +42,12 @@
             <div class="text-2xl font-extrabold mb-2">Summary</div>
             <div class="flex items-center justify-between my-4">
               <div class="font-semibold">Total</div>
-              <div class="text-2xl font-semibold">
+              <!-- <div class="text-2xl font-semibold">
                 $<span class="font-extrabold"> {{ totalPriceComputed }}</span>
+              </div> -->
+              <div class="text-2xl font-semibold">
+                <span class="font-extrabold">$</span>
+                <span class="font-extrabold">{{ totalPriceComputed }}</span>
               </div>
             </div>
             <button
@@ -69,7 +73,54 @@
 
 <script setup>
 import MainLayout from "~/layouts/MainLayout.vue";
+import { useUserStore } from "~/stores/user";
+const userStore = useUserStore();
+
+let selectedArray = ref([]);
+
+onMounted(() => {
+  setTimeout(() => (userStore.isLoading = false), 200);
+});
+
 const cards = ref(["visa.png", "mastercard.png", "paypal.png", "applepay.png"]);
+
+const totalPriceComputed = computed(() => {
+  let price = 0;
+  userStore.cart.forEach((prod) => {
+    price += prod.price;
+  });
+  return price / 100;
+});
+
+const selectedRadioFunc = (e) => {
+  if (!selectedArray.value.length) {
+    selectedArray.value.push(e);
+    return;
+  }
+  selectedArray.value.forEach((item, index) => {
+    if (e.id != item.id) {
+      selectedArray.value.push(e);
+    } else {
+      selectedArray.value.splice(index, 1);
+    }
+  });
+};
+
+const goToCheckout = () => {
+  let id = [];
+  userStore.checkout = [];
+
+  selectedArray.value.forEach((item) => ids.push(item.id));
+
+  let res = userStore.cart.filter((item) => {
+    return ids.indexOf(item.id) != -1;
+  });
+
+  res.forEach((item) => userStore.checkout.push(toRaw(item)));
+
+  return navigateTo("/checkout");
+};
+
 const products = [
   {
     id: 1,
