@@ -2,6 +2,8 @@
   "recommendations": [
     "vue.vscode-typescript-vue-plugin",
     "vue.volar",
-    "octref.vetur"
+    "octref.vetur",
+    "johnsoncodehk.volarjs-labs",
+    "bradlc.vscode-tailwindcss"
   ]
 }
