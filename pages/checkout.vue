@@ -5,7 +5,7 @@
         <div class="md:w-[65%]">
           <div class="bg-white rounded-lg p-4">
             <div class="text-xl font-semibold mb-2">Shipping Address</div>
-            <div v-if="true">
+            <div v-if="false">
               <NuxtLink
                 to="address"
                 class="flex items-center pb-2 text-blue-500 hover:text-red-400"
@@ -18,11 +18,57 @@
                 <ul class="text-xs">
                   <li class="flex items-center gap-2">
                     <div>Content name:</div>
-                    <div class="font-bold">
-                      {{ currentAddress.data.name }}
-                    </div>
+                    <div class="font-bold">TEST</div>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <div>Address:</div>
+                    <div class="font-bold">TEST</div>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <div>Zip Code:</div>
+                    <div class="font-bold">TEST</div>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <div>City:</div>
+                    <div class="font-bold">TEST</div>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <div>Country:</div>
+                    <div class="font-bold">TEST</div>
                   </li>
                 </ul>
+              </div>
+            </div>
+
+            <NuxtLink
+              v-else
+              to="/address"
+              class="flex items-center text-blue-500 hover:text-red-400"
+            >
+              <Icon name="mdi:plus" size="18" class="mr-2" />
+              Add New Address
+            </NuxtLink>
+          </div>
+          <div id="Items" class="bg-white rounded-lg p-4 mt-4">
+            <div v-for="product in products" :key="product.id">
+              <checkoutItem :product="product" />
+            </div>
+          </div>
+        </div>
+        <div class="md:hidden block my-4" />
+        <div class="md:w-[35%]">
+          <div id="PlaceOrder" class="bg-white rounded-lg p-4">
+            <div class="text-2xl font-semibold mb-2">Summary</div>
+            <div class="flex items-center justify-between my-4">
+              <div>Total Shipping</div>
+              <div>Free</div>
+            </div>
+            <div class="border-t" />
+
+            <div class="flex items-center justify-between my-4">
+              <div class="font-semibold">Total</div>
+              <div class="text-2xl font-semibold">
+                $ <span class="font-semibold">{{ total / 100 }} </span>
               </div>
             </div>
           </div>
