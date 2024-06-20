@@ -3,7 +3,7 @@
     <div id="CheckoutPage" class="mt-4 max-w-[1200px] mx-auto px-2">
       <div class="md:flex gap-4 justify-between mx-auto w-full">
         <div class="md:w-[65%]">
-          <div class="bg-white rounded-lg p-4">
+          <div class="bg-gray-100 rounded-lg p-4">
             <div class="text-xl font-semibold mb-2">Shipping Address</div>
             <div v-if="false">
               <NuxtLink
@@ -49,7 +49,7 @@
               Add New Address
             </NuxtLink>
           </div>
-          <div id="Items" class="bg-white rounded-lg p-4 mt-4">
+          <div id="Items" class="bg-gray-100 rounded-lg p-4 mt-4">
             <div v-for="product in products" :key="product.id">
               <checkoutItem :product="product" />
             </div>
@@ -57,7 +57,7 @@
         </div>
         <div class="md:hidden block my-4" />
         <div class="md:w-[35%]">
-          <div id="PlaceOrder" class="bg-white rounded-lg p-4">
+          <div id="PlaceOrder" class="bg-gray-100 rounded-lg p-4">
             <div class="text-2xl font-semibold mb-2">Summary</div>
             <div class="flex items-center justify-between my-4">
               <div>Total Shipping</div>
@@ -71,6 +71,32 @@
                 $ <span class="font-semibold">{{ total / 100 }} </span>
               </div>
             </div>
+            <form @submit.prevent="pay()" action="">
+              <div
+                class="border border-gray-900 p-2 rounded-sm"
+                id="card-element"
+              />
+              <p
+                id="card-error"
+                role="alert"
+                class="text-red-700 text-center font-semibolds"
+              />
+              <button
+                :disabled="isProcessing"
+                type="submit"
+                class="mt-4 bg-gradient-to-r from-[#FE630C] to-[#FF3200] w-full text-gray-100 text-[21px] font-semibold p-1.5 rounded-full"
+                :class="isProcessing ? 'opacity-70' : 'opacity-100'"
+              >
+                <Icon v-if="isProcessing" name="eos-icons:loading" />
+                <div v-else>Place order</div>
+              </button>
+            </form>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-4 mt-4">
+            <div class="text-lg font-semibold mb-2">AlayExpress</div>
+            <p class="my-2">
+              AlayExpress keeps your information and payment safe
+            </p>
           </div>
         </div>
       </div>
